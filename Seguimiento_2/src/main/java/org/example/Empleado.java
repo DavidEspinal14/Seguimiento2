@@ -4,6 +4,7 @@ public abstract class Empleado {
     public String nombre;
     public int edad;
     public String cedula;
+    public String idEmpleado;
 
     /**
      * Constructor
@@ -11,10 +12,11 @@ public abstract class Empleado {
      * @param edad
      * @param cedula
      */
-    public Empleado(String nombre, int edad, String cedula) {
+    public Empleado(String nombre, int edad, String cedula, String idEmpleado) {
         this.nombre = nombre;
         this.edad = edad;
         this.cedula = cedula;
+        this.idEmpleado = idEmpleado;
     }
 
     /**
@@ -39,4 +41,6 @@ public abstract class Empleado {
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
+    public String getIdEmpleado() {return idEmpleado;}
+    public void setIdEmpleado(String idEmpleado) {this.idEmpleado = idEmpleado;}
 }
