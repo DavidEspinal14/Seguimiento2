@@ -45,6 +45,28 @@ public class Bibliotecario extends Empleado implements Inventario {
             }
         }
     }
+    /**
+     * Metodo que agrega miembros
+     * @param miembro
+     * @param ListaMiembros
+     */
+
+    public void agregarMiembro( Miembro miembro, List <Miembro> ListaMiembros){
+        if(miembro.getIdMiembro()== null){
+            ListaMiembros.add(miembro);
+        }
+    }
+
+    public void asociarPrestamoMiembro(List<Miembro> ListaMiembros, List<Prestamo> ListaPrestamos) {
+        for (Prestamo prestamo : ListaPrestamos) {
+            List<Miembro> miembrosAsociados = prestamo.getListaMiembrosAsociados();
+            for (Miembro miembro : ListaMiembros) {
+                if (!miembrosAsociados.contains(miembro)) {
+                    miembrosAsociados.add(miembro);
+                }
+            }
+        }
+    }
 
 
     /**
