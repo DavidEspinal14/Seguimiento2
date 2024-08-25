@@ -1,6 +1,8 @@
 package org.example;
 
-public class Bibliotecario extends Empleado{
+import java.io.Serializable;
+
+public class Bibliotecario extends Empleado implements Inventario {
     public int horasTrabajo;
     public Bibliotecario(int horasTrabajo){
         super(nombre, edad, cedula, idEmpleado);
@@ -21,5 +23,11 @@ public class Bibliotecario extends Empleado{
             System.out.println("El objeto proporcionado no es válido.");
         }
     }
+
+    /**
+     * Metodo polimorfico para gestionar libros, dvd´s, revistas
+     */
+    @Override
+    public void gestionarItem() {
     }
 }
