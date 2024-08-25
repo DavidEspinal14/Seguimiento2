@@ -1,13 +1,14 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Biblioteca {
     private String nombre;
-    public Collection <Biblioteca> miembros;
-    public Collection <Biblioteca> libros;
-    public Collection <Biblioteca> prestamos;
+    private List<Libro> Listalibros;
+    private List<Miembro> ListaMiembros;
+    private List<Prestamo> ListaPrestamos;
+    private List<Libro> ListaLibrosPrestados;
 
     /**
      * Constructor
@@ -15,11 +16,7 @@ public class Biblioteca {
      */
     public Biblioteca(String nombre) {
         this.nombre = nombre;
-        miembros = new ArrayList<Biblioteca>();
-        libros = new ArrayList<Biblioteca>();
-        prestamos = new ArrayList<Biblioteca>();
     }
-
 
 
     /**
@@ -28,8 +25,8 @@ public class Biblioteca {
      */
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}
-    public Collection <Biblioteca> getLibros() {return libros;}
-    public void setLibros(Collection <Biblioteca> libros) {this.libros = libros;}
-    public Collection <Biblioteca> getPrestamos() {return prestamos;}
-    public void setPrestamos(Collection <Biblioteca> prestamos) {this.prestamos = prestamos;}
+    public Collection<Libro> getListalibros() {return Listalibros;}
+    public Collection<Prestamo> getListaPrestamos() {return ListaPrestamos;}
+    public Collection<Miembro> getListaMiembros() {return ListaMiembros;}
+    public Collection<Libro> getListaLibrosPrestados() {return ListaLibrosPrestados;}
 }

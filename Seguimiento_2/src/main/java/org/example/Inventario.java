@@ -1,6 +1,8 @@
 package org.example;
 
 public class Inventario {
-    public Inventario() {}
-    public void gestionarItem(){}
+
+    public void gestionarItem(){gestionarRevista();}
+    public void gestionarRevista(){}
 }
+
