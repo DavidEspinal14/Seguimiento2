@@ -56,6 +56,11 @@ public class Bibliotecario extends Empleado implements Inventario {
             ListaMiembros.add(miembro);
         }
     }
+    /**
+     * Metodo que asocia miembros y prestamos
+     * @param ListaMiembros
+     * @param ListaPrestamos
+     */
 
     public void asociarPrestamoMiembro(List<Miembro> ListaMiembros, List<Prestamo> ListaPrestamos) {
         for (Prestamo prestamo : ListaPrestamos) {
