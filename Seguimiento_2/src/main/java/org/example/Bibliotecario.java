@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Bibliotecario extends Empleado implements Inventario {
     public int horasTrabajo;
-    public Bibliotecario(int horasTrabajo){
+    public Bibliotecario(String nombre,int edad, String cedula, String idEmpleado, int horasTrabajo){
         super(nombre, edad, cedula, idEmpleado);
     }
     public void gestionarPrestamo(){
@@ -64,7 +64,7 @@ public class Bibliotecario extends Empleado implements Inventario {
 
     public void asociarPrestamoMiembro(List<Miembro> ListaMiembros, List<Prestamo> ListaPrestamos) {
         for (Prestamo prestamo : ListaPrestamos) {
-            List<Miembro> miembrosAsociados = prestamo.getListaMiembrosAsociados();
+            List<Miembro> miembrosAsociados = (List<Miembro>) prestamo.getListaMiembrosAsociados();
             for (Miembro miembro : ListaMiembros) {
                 if (!miembrosAsociados.contains(miembro)) {
                     miembrosAsociados.add(miembro);
@@ -82,5 +82,9 @@ public class Bibliotecario extends Empleado implements Inventario {
         agregarPrestamo(prestamo, ListaPrestamos);
         devolverPrestamo(prestamo, ListaPrestamos);
         gestionarRevista();
+    }
+
+    @Override
+    public void gestionarRevista() {
     }
 }

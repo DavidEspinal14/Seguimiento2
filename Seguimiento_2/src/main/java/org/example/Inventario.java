@@ -1,8 +1,9 @@
 package org.example;
 
-public class Inventario {
+import java.util.List;
 
-    public void gestionarItem(){gestionarRevista();}
-    public void gestionarRevista(){}
+public interface Inventario {
+    public void gestionarItem(Prestamo prestamo, List<Prestamo> ListaPrestamos);
+    public void gestionarRevista();
 }
 
