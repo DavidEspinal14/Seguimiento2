@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primary_color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.javafx.Controladores.InicioController">
+   <children>
+      <VBox alignment="CENTER_RIGHT" layoutY="189.0" prefHeight="181.0" prefWidth="255.0">
+         <children>
+            <Button fx:id="pruebBtn" mnemonicParsing="false" onAction="#clickPrueba" text="Prueba" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox alignment="BOTTOM_CENTER" layoutX="5.0" prefHeight="181.0" prefWidth="594.0">
+         <children>
+            <Label prefHeight="13.0" prefWidth="189.0" text="BIENVENIDO" textFill="#9bc3eb">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="345.0" layoutY="186.0" prefHeight="187.0" prefWidth="255.0">
+         <children>
+            <Button fx:id="nuevoBtn" mnemonicParsing="false" onAction="#clickNuevoBtn" text="Nuevo" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

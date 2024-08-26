@@ -7,8 +7,8 @@ import java.util.List;
 public class Prestamo {
     public LocalDate fechaPrestamo;
     public LocalDate fechaDevolucion;
-    public List<Libro> ListaLibrosAsociados;
-    public List<Miembro> ListaMiembrosAsociados;
+    public Libro libro;
+    public Miembro miembro;
 
     /**
      * Constructor
@@ -25,11 +25,10 @@ public class Prestamo {
      * Asociar Libro
      * @param libro
      */
-    public void asociarLibro(Libro libro,List<Libro> ListaLibrosPrestados) {
-        if (ListaLibrosAsociados.contains(libro)) {System.out.print("el libro ya esta en el prestamo");}
-        if (ListaLibrosAsociados.size()>15){System.out.print("La cantidad de libros en el prestamo es muy grande");}
-        else{ListaLibrosAsociados.add(libro);
-        ListaLibrosPrestados.add(libro);}
+    public void asociarLibro(Libro libro) {
+        if (libro != null) {
+            this.libro = libro;
+        }
     }
 
     /**
@@ -37,8 +36,9 @@ public class Prestamo {
      * @param miembro
      */
     public void asociarMiembro(Miembro miembro) {
-        if (ListaMiembrosAsociados == null) {ListaMiembrosAsociados.add(miembro);}
-        else{System.out.println("El prestamo ya esta asociado a un miembro");}
+        if (miembro != null) {
+            this.miembro = miembro;
+        }
     }
 
     /**
@@ -48,7 +48,11 @@ public class Prestamo {
     public LocalDate getFechaPrestamo() {return fechaPrestamo;}
     public LocalDate getFechaDevolucion() {return fechaDevolucion;}
     public void setFechaDevolucion(){this.fechaDevolucion=fechaDevolucion;}
-    public Collection<Libro> getListaLibrosAsociados() {return ListaLibrosAsociados;}
-    public Collection<Miembro> getListaMiembrosAsociados() {return ListaMiembrosAsociados;}
+    public Libro getLibro() {
+        return libro;
+    }
+    public Miembro getMiembro() {
+        return miembro;
+    }
 }
 
