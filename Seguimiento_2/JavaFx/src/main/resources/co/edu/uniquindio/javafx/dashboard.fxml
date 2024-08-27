@@ -8,56 +8,58 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.javafx.Controladores.dashboardController">
    <children>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+    <AnchorPane fx:id="barra" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="160.0" styleClass="secondary_color" stylesheets="@style.css">
          <children>
-            <FontAwesomeIcon glyphName="USER" layoutX="53.0" layoutY="102.0" size="6em" text="" wrappingWidth="40.428571701049805" />
-            <Button layoutX="-1.0" layoutY="151.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="166.0" text="Prestamos" />
-            <Button layoutX="-3.0" layoutY="193.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="172.0" text="Miembros" />
-            <FontAwesomeIcon glyphName="BOOK" layoutX="29.0" layoutY="180.0" size="2em" wrappingWidth="24.428571701049805" />
-            <FontAwesomeIcon glyphName="USERS" layoutX="22.0" layoutY="223.0" size="2em" wrappingWidth="14.857142448425293" />
-            <Label layoutX="53.0" layoutY="27.0" text="Bienvenido" />
-            <Label layoutX="53.0" layoutY="119.0" text="Admin Test" />
+            <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="53.0" layoutY="102.0" size="6em" text="" wrappingWidth="40.428571701049805" />
+            <Button layoutX="-1.0" layoutY="152.0" mnemonicParsing="false" onAction="#clickPrestamos" prefHeight="40.0" prefWidth="160.0" styleClass="secondary_color" stylesheets="@style.css" text="  Prestamos" textFill="WHITE" />
+            <Button layoutX="-3.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickMiembros" prefHeight="43.0" prefWidth="160.0" styleClass="primary_color" stylesheets="@style.css" text="  Miembros" textFill="WHITE" />
+            <FontAwesomeIcon fill="WHITE" glyphName="BOOK" layoutX="29.0" layoutY="180.0" size="2em" wrappingWidth="24.428571701049805" />
+            <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="22.0" layoutY="223.0" size="2em" wrappingWidth="14.857142448425293" />
+            <Label layoutX="53.0" layoutY="27.0" text="Bienvenido" textFill="WHITE" />
+            <Label layoutX="48.0" layoutY="119.0" text="Admin Test" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="177.0" prefHeight="400.0" prefWidth="423.0" visible="false">
+      <AnchorPane fx:id="menuPrestamos" layoutX="177.0" prefHeight="400.0" prefWidth="423.0" stylesheets="@style.css" visible="false">
          <children>
-            <Button layoutX="244.0" layoutY="50.0" mnemonicParsing="false" text="Agregar Prestamo" />
-            <Button layoutX="72.0" layoutY="50.0" mnemonicParsing="false" text="Finalizar Prestamo" />
+            <Button layoutX="244.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickAgregarPrestamo" stylesheets="@style.css" text="Agregar Prestamo" textFill="WHITE" />
+            <Button layoutX="72.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickFinalizarPrestamo" stylesheets="@style.css" text="Finalizar Prestamo" textFill="WHITE" />
             <Label layoutX="157.0" layoutY="16.0" text="Menu Prestamos">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TableView layoutX="7.0" layoutY="89.0" prefHeight="297.0" prefWidth="410.0">
+            <TableView fx:id="tablaPrestamos" layoutX="7.0" layoutY="89.0" prefHeight="297.0" prefWidth="410.0" styleClass="filter" stylesheets="@tablaStyle.css">
               <columns>
-                <TableColumn prefWidth="78.0" text="Fecha Prestamo" />
-                <TableColumn prefWidth="72.0" text="Fecha Devolucion" />
-                  <TableColumn prefWidth="96.0" text="Nombre miembro" />
-                  <TableColumn prefWidth="84.0" text="Identificacion" />
-                  <TableColumn prefWidth="79.0" text="Material" />
+                <TableColumn fx:id="columnaFechaPrestamo" prefWidth="103.0" text="Fecha Prestamo" />
+                <TableColumn fx:id="columnaFechaDevolucion" prefWidth="104.0" text="Fecha Devolucion" />
+                  <TableColumn fx:id="columnaNombre" prefWidth="67.0" text="Nombre miembro" />
+                  <TableColumn fx:id="columnaId" minWidth="7.0" prefWidth="56.0" text="Identificacion" />
+                  <TableColumn fx:id="columnaMaterial" prefWidth="79.0" text="Material" />
               </columns>
             </TableView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="178.0" layoutY="-3.0" prefHeight="406.0" prefWidth="423.0">
+      <AnchorPane fx:id="menuMiembros" layoutX="178.0" layoutY="-3.0" prefHeight="406.0" prefWidth="423.0">
          <children>
-            <TableView layoutX="9.0" layoutY="130.0" prefHeight="262.0" prefWidth="401.0">
+            <TableView fx:id="tablaMiembros" layoutX="11.0" layoutY="95.0" prefHeight="297.0" prefWidth="401.0" styleClass="filter" stylesheets="@tablaStyle.css">
               <columns>
-                <TableColumn prefWidth="75.0" text="Nombre" />
-                <TableColumn prefWidth="75.0" text="Id Miembro" />
+                <TableColumn fx:id="columnaNombreMiembro" prefWidth="194.0" text="Nombre" />
+                <TableColumn fx:id="columnaIdMiembro" prefWidth="206.0" text="Id Miembro" />
               </columns>
             </TableView>
-            <Label layoutX="170.0" layoutY="38.0" text="Menu Mienbros">
+            <Label layoutX="162.0" layoutY="14.0" text="Menu Mienbros">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="40.0" layoutY="78.0" mnemonicParsing="false" text="Agregar Mienbro" />
-            <Button layoutX="288.0" layoutY="78.0" mnemonicParsing="false" text="Eliminar miembro" />
-            <Button layoutX="170.0" layoutY="78.0" mnemonicParsing="false" text="Inspeccionar" />
+            <Button layoutX="41.0" layoutY="48.0" mnemonicParsing="false" onAction="#clickAgregarMiembro" stylesheets="@style.css" text="Agregar Mienbro" textFill="WHITE" />
+            <Button layoutX="280.0" layoutY="48.0" mnemonicParsing="false" onAction="#clickEliminarMiembro" stylesheets="@style.css" text="Eliminar miembro" textFill="WHITE" />
+            <Button layoutX="170.0" layoutY="48.0" mnemonicParsing="false" onAction="#clickInspeccionarMiembro" stylesheets="@style.css" text="Inspeccionar" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

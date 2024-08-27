@@ -1,0 +1,20 @@
+.btn:hover{
+    -fx-cursor: hand;
+}
+.table-view{
+    -fx-background-color: #A7D0D2 ;
+    -fx-background-radius: 14 14 2 2;
+}
+.table-view .column-header-background{
+    -fx-background-color: #A7D0D2;
+    -fx-background-radius: 14;
+    -fx-background-insets: 0 0 10 0;
+}
+.table-view .column-header,.table-view.filter{
+    -fx-size: 50px;
+    -fx-border-vidth: 0 0 10 0;
+    -fx-background-color: transparent;
+}
+.table-view .column-header . label{
+    -fx-text-fill: white;
+}
