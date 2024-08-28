@@ -25,7 +25,17 @@ public class Biblioteca {
         listaMiembros = new ArrayList<>();
         listaPrestamos = new ArrayList<>();
     }
-
+    public <T> void eliminarAutomatico(T objeto){
+        if (objeto instanceof Libro){
+            listalibros.remove((Libro)objeto);
+        }else if (objeto instanceof Bibliotecario){
+            listaBibliotecarios.remove((Bibliotecario)objeto);
+        }else if (objeto instanceof Miembro){
+            listaMiembros.remove((Miembro)objeto);
+        }else if (objeto instanceof Prestamo){
+            listaPrestamos.remove((Prestamo)objeto);
+        }
+    }
     /**
      * Metodo generico para agregar cualquier objeto dependiendo de su clase en la lista correspondiente
      * @param objeto

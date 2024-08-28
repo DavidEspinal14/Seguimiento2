@@ -6,12 +6,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TableColumn;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -70,25 +78,80 @@ public class dashboardController implements Initializable {
 
     }
     @FXML
-    void clickAgregarMiembro(ActionEvent event) {
+    void clickAgregarMiembro(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/javafx/agregar-miembro.fxml"));
+        Parent root = loader.load();
+        AgregarMiembroController controlador = loader.getController();
+        Scene scene = new Scene(root,400,500);
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
+
+        Miembro m = controlador.getMiembro();
+
+        if (m!=null) {
+            biblioteca.agregarAutomatico(m);
+            this.miembros.add(m);
+            this.tablaMiembros.refresh();
+        }
+
     }
     @FXML
-    void clickAgregarPrestamo(ActionEvent event) {
+    void clickAgregarPrestamo(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/javafx/agregar-prestamo.fxml"));
+        Parent root = loader.load();
+        AgregarPrestamoController controlador = loader.getController();
+        controlador.initAtributtes(biblioteca);
+        Scene scene = new Scene(root,400,500);
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
 
+        Prestamo pres = controlador.getPrestamo();
+        if (pres!=null) {
+            biblioteca.agregarAutomatico(pres);
+            prestamos.add(pres);
+            this.tablaPrestamos.refresh();
         }
+
+    }
 
     @FXML
     void clickEliminarMiembro(ActionEvent event) {
-
+        Miembro m = tablaMiembros.getSelectionModel().getSelectedItem();
+        if (m!=null) {
+            biblioteca.eliminarAutomatico(m);
+            this.miembros.remove(m);
+            this.tablaMiembros.refresh();
         }
+
+    }
 
     @FXML
     void clickFinalizarPrestamo(ActionEvent event) {
-
+        Prestamo m = this.tablaPrestamos.getSelectionModel().getSelectedItem();
+        if (m!=null) {
+            prestamos.remove(m);
+            this.tablaPrestamos.refresh();
         }
+    }
 
     @FXML
-    void clickInspeccionarMiembro(ActionEvent event) {
+    void clickInspeccionarMiembro(ActionEvent event) throws IOException {
+        Miembro m = this.tablaMiembros.getSelectionModel().getSelectedItem();
+        if (m != null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/javafx/info-miembro.fxml"));
+            Parent root = loader.load();
+            InfoMiembrosController controlador = loader.getController();
+            controlador.initAttributes(m);
+            Scene scene = new Scene(root,400,500);
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(scene);
+            stage.showAndWait();
+        }
     }
 
     public Biblioteca getBiblioteca() {

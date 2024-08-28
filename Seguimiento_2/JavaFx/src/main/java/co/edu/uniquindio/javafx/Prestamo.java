@@ -42,7 +42,9 @@ public class Prestamo {
      */
     public void asociarMiembro(Miembro miembro) {
         if (miembro != null && this.miembro == null) {
+            miembro.agregarPrestamo(this);
             this.miembro = miembro;
+
         }else{
             JOptionPane.showMessageDialog(null,"Este prestamo ya tiene un miembro asociado");
         }

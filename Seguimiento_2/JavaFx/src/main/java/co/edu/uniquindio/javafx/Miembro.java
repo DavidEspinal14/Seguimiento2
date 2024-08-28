@@ -20,7 +20,9 @@ public class Miembro {
         this.idMiembro = idMiembro;
         prestamos = new ArrayList<Prestamo>();
     }
-
+    public void agregarPrestamo(Prestamo prestamo) {
+        prestamos.add(prestamo);
+    }
     /**
      * Gets y Sets
      * @return

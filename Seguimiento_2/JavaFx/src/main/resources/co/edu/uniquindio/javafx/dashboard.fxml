@@ -24,16 +24,16 @@
                </font></Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="menuPrestamos" layoutX="177.0" prefHeight="400.0" prefWidth="423.0" stylesheets="@style.css" visible="false">
+      <AnchorPane fx:id="menuPrestamos" layoutX="177.0" prefHeight="400.0" prefWidth="423.0" stylesheets="@style.css">
          <children>
-            <Button layoutX="244.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickAgregarPrestamo" stylesheets="@style.css" text="Agregar Prestamo" textFill="WHITE" />
-            <Button layoutX="72.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickFinalizarPrestamo" stylesheets="@style.css" text="Finalizar Prestamo" textFill="WHITE" />
+            <Button layoutX="66.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickAgregarPrestamo" stylesheets="@style.css" text="Agregar Prestamo" textFill="WHITE" />
+            <Button layoutX="242.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickFinalizarPrestamo" stylesheets="@style.css" text="Finalizar Prestamo" textFill="WHITE" />
             <Label layoutX="157.0" layoutY="16.0" text="Menu Prestamos">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TableView fx:id="tablaPrestamos" layoutX="7.0" layoutY="89.0" prefHeight="297.0" prefWidth="410.0" styleClass="filter" stylesheets="@tablaStyle.css">
+            <TableView fx:id="tablaPrestamos" layoutX="7.0" layoutY="89.0" prefHeight="297.0" prefWidth="410.0" styleClass="column-header" stylesheets="@tablaStyle.css">
               <columns>
                 <TableColumn fx:id="columnaFechaPrestamo" prefWidth="103.0" text="Fecha Prestamo" />
                 <TableColumn fx:id="columnaFechaDevolucion" prefWidth="104.0" text="Fecha Devolucion" />
@@ -44,9 +44,9 @@
             </TableView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="menuMiembros" layoutX="178.0" layoutY="-3.0" prefHeight="406.0" prefWidth="423.0">
+      <AnchorPane fx:id="menuMiembros" layoutX="178.0" layoutY="-3.0" prefHeight="406.0" prefWidth="423.0" visible="false">
          <children>
-            <TableView fx:id="tablaMiembros" layoutX="11.0" layoutY="95.0" prefHeight="297.0" prefWidth="401.0" styleClass="filter" stylesheets="@tablaStyle.css">
+            <TableView fx:id="tablaMiembros" layoutX="11.0" layoutY="95.0" prefHeight="297.0" prefWidth="401.0" styleClass="column-header" stylesheets="@tablaStyle.css">
               <columns>
                 <TableColumn fx:id="columnaNombreMiembro" prefWidth="194.0" text="Nombre" />
                 <TableColumn fx:id="columnaIdMiembro" prefWidth="206.0" text="Id Miembro" />
