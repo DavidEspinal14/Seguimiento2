@@ -2,6 +2,7 @@ package co.edu.uniquindio.javafx;
 
 import javax.swing.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -11,6 +12,7 @@ public class Prestamo {
     public LocalDate fechaDevolucion;
     public Libro libro;
     public Miembro miembro;
+    private Collection<Miembro> listaMiembrosAsociados;
 
     /**
      * Constructor
@@ -20,6 +22,7 @@ public class Prestamo {
     public Prestamo(LocalDate fechaPrestamo, LocalDate fechaDevolucion) {
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
+        listaMiembrosAsociados = new ArrayList<>();
     }
     public Prestamo() {}
 
@@ -62,5 +65,9 @@ public class Prestamo {
     }
     public Miembro getMiembro() {
         return miembro;
+    }
+
+    public Collection<Miembro> getListaMiembrosAsociados() {
+        return listaMiembrosAsociados;
     }
 }

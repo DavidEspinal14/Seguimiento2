@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="963a801e-f086-4fc4-864a-8d9eb90402ab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Biblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/InicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/InicioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Bibliotecario.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Bibliotecario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/AgregarMiembroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/AgregarMiembroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/AgregarPrestamoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/AgregarPrestamoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/InfoMiembrosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/InfoMiembrosController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/dashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Controladores/dashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Miembro.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Miembro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/java/co/edu/uniquindio/javafx/Prestamo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaFx/src/main/resources/co/edu/uniquindio/javafx/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFx/src/main/resources/co/edu/uniquindio/javafx/dashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +100,7 @@
       <workItem from="1724529479494" duration="5000" />
       <workItem from="1724641840115" duration="8152000" />
       <workItem from="1724769525566" duration="14403000" />
-      <workItem from="1724795808905" duration="15855000" />
+      <workItem from="1724795808905" duration="17274000" />
     </task>
     <task id="LOCAL-00001" summary="Crear atributos de clases y metodos get y set">
       <option name="closed" value="true" />

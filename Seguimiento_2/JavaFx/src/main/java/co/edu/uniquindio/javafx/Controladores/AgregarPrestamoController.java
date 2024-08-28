@@ -30,6 +30,10 @@ public class AgregarPrestamoController {
     private Biblioteca biblioteca;
     private Prestamo prestamo;
 
+    /**
+     * Metodo para crear un nuevo prestamo al dar click en guardar
+     * @param event
+     */
     @FXML
     void clickGuardar(ActionEvent event) {
         Libro l = boxLibro.getSelectionModel().getSelectedItem();
@@ -41,6 +45,11 @@ public class AgregarPrestamoController {
         Stage stage = (Stage) btnGuardar.getScene().getWindow();
         stage.close();
     }
+
+    /**
+     * Metodo para inicializar las cajas desplegables para crear un nuevo prestamo
+     * @param biblioteca
+     */
     public void initAtributtes(Biblioteca biblioteca) {
         this.biblioteca = biblioteca;
         boxLibro.setItems(FXCollections.observableArrayList(biblioteca.getListalibros()));
@@ -65,6 +74,10 @@ public class AgregarPrestamoController {
         boxMiembro.setButtonCell(boxMiembro.getCellFactory().call(null));
     }
 
+    /**
+     * Seccion Gets y Sets
+     * @return
+     */
     public Prestamo getPrestamo() {
         return prestamo;
     }

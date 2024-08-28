@@ -25,6 +25,10 @@ public class AgregarMiembroController implements Initializable {
     private TextField txtNombre;
     private Miembro miembro;
 
+    /**
+     * Metodo para crear un nuevo miembro al dar click en el boton guardar
+     * @param event
+     */
     @FXML
     void clickGuardar(ActionEvent event) {
         String nombre = txtNombre.getText();
@@ -38,6 +42,10 @@ public class AgregarMiembroController implements Initializable {
         stage.close();
     }
 
+    /**
+     * Seccion Gets y sets
+     * @return
+     */
     public Miembro getMiembro() {
         return miembro;
     }

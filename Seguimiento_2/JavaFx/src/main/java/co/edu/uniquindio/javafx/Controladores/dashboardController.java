@@ -64,6 +64,10 @@ public class dashboardController implements Initializable {
 
     private Biblioteca biblioteca;
 
+    /**
+     * Metodo para cambiar de vista a Miembros
+     * @param event
+     */
     @FXML
     void clickMiembros(ActionEvent event) {
         menuPrestamos.setVisible(false);
@@ -71,12 +75,22 @@ public class dashboardController implements Initializable {
 
     }
 
+    /**
+     * Metodo para cambiar de vista a Prestamos
+     * @param event
+     */
     @FXML
     void clickPrestamos(ActionEvent event) {
         menuMiembros.setVisible(false);
         menuPrestamos.setVisible(true);
 
     }
+
+    /**
+     * Metodo para agregar un miembro cuando se da click en el boton de agregar
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void clickAgregarMiembro(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/javafx/agregar-miembro.fxml"));
@@ -97,6 +111,12 @@ public class dashboardController implements Initializable {
         }
 
     }
+
+    /**
+     * Metodo para agregar un prestamo cuando se da click en el boton
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void clickAgregarPrestamo(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/javafx/agregar-prestamo.fxml"));
@@ -118,6 +138,10 @@ public class dashboardController implements Initializable {
 
     }
 
+    /**
+     * Metodo para eliminar un miembro de la biblioteca
+     * @param event
+     */
     @FXML
     void clickEliminarMiembro(ActionEvent event) {
         Miembro m = tablaMiembros.getSelectionModel().getSelectedItem();
@@ -129,6 +153,10 @@ public class dashboardController implements Initializable {
 
     }
 
+    /**
+     * Metodo para eliminar un prestamo de la biblioteca
+     * @param event
+     */
     @FXML
     void clickFinalizarPrestamo(ActionEvent event) {
         Prestamo m = this.tablaPrestamos.getSelectionModel().getSelectedItem();
@@ -138,6 +166,11 @@ public class dashboardController implements Initializable {
         }
     }
 
+    /**
+     * metodo para inspeccionar un miembro de la lista de miembros
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void clickInspeccionarMiembro(ActionEvent event) throws IOException {
         Miembro m = this.tablaMiembros.getSelectionModel().getSelectedItem();
@@ -154,14 +187,11 @@ public class dashboardController implements Initializable {
         }
     }
 
-    public Biblioteca getBiblioteca() {
-        return biblioteca;
-    }
-
-    public void setBiblioteca(Biblioteca biblioteca) {
-        this.biblioteca = biblioteca;
-    }
-
+    /**
+     * Metodo para inicializar las tablas y columnas con datos quemados
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.biblioteca = inicializarDatos();
@@ -225,6 +255,16 @@ public class dashboardController implements Initializable {
         List<Object> parametros = Arrays.asList(bibliotecario1,bibliotecario2,miembro1,miembro2,miembro3,miembro4,miembro5,libro1,libro2,libro3,libro4,libro5,libro6,libro7,libro8,prestamo1,prestamo2,prestamo3,prestamo4);
         parametros.forEach(biblioteca::agregarAutomatico);
         return biblioteca;
+    }
+    /**
+     * Seccion Gets y Sets
+     */
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
     }
 }
 

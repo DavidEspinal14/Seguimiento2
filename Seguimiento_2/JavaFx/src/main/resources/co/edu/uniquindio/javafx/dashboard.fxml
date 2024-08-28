@@ -24,7 +24,7 @@
                </font></Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="menuPrestamos" layoutX="177.0" prefHeight="400.0" prefWidth="423.0" stylesheets="@style.css">
+      <AnchorPane fx:id="menuPrestamos" layoutX="177.0" prefHeight="400.0" prefWidth="423.0" stylesheets="@style.css" visible="false">
          <children>
             <Button layoutX="66.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickAgregarPrestamo" stylesheets="@style.css" text="Agregar Prestamo" textFill="WHITE" />
             <Button layoutX="242.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickFinalizarPrestamo" stylesheets="@style.css" text="Finalizar Prestamo" textFill="WHITE" />
@@ -44,7 +44,7 @@
             </TableView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="menuMiembros" layoutX="178.0" layoutY="-3.0" prefHeight="406.0" prefWidth="423.0" visible="false">
+      <AnchorPane fx:id="menuMiembros" layoutX="178.0" layoutY="-3.0" prefHeight="406.0" prefWidth="423.0">
          <children>
             <TableView fx:id="tablaMiembros" layoutX="11.0" layoutY="95.0" prefHeight="297.0" prefWidth="401.0" styleClass="column-header" stylesheets="@tablaStyle.css">
               <columns>
@@ -52,7 +52,7 @@
                 <TableColumn fx:id="columnaIdMiembro" prefWidth="206.0" text="Id Miembro" />
               </columns>
             </TableView>
-            <Label layoutX="162.0" layoutY="14.0" text="Menu Mienbros">
+            <Label layoutX="162.0" layoutY="14.0" text="Menu Miembros">
                <font>
                   <Font size="14.0" />
                </font>

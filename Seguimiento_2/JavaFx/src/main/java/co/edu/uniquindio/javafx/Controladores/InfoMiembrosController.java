@@ -42,6 +42,11 @@ public class InfoMiembrosController implements Initializable {
 
     private Miembro miembro;
 
+    /**
+     * Metodo para inicializar las tablas de los prestamos que tiene cada miembro
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         prestamos = FXCollections.observableArrayList();
@@ -51,16 +56,11 @@ public class InfoMiembrosController implements Initializable {
         colAutor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLibro().getAutor()));
         colIsbn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getLibro().getISBN()));
     }
-    public Miembro iniciarMiembro(){
-        Miembro miembro = new Miembro("ejemplo","ejemplo");
-        return miembro;
-    }
-    public Miembro getMiembro() {
-        return miembro;
-    }
-    public void setMiembro(Miembro miembro) {
-        this.miembro = miembro;
-    }
+
+    /**
+     * Metodo para llenar la tabla de los prestamos de un miembro
+     * @param miembro
+     */
     public void initAttributes(Miembro miembro){
         this.miembro = miembro;
 
@@ -76,6 +76,17 @@ public class InfoMiembrosController implements Initializable {
         txtNombre.setText(this.miembro.getNombre());
         txtId.setText(this.miembro.getIdMiembro());
 
+    }
+
+    /**
+     * Seccion Gets y Sets
+     * @return
+     */
+    public Miembro getMiembro() {
+        return miembro;
+    }
+    public void setMiembro(Miembro miembro) {
+        this.miembro = miembro;
     }
 }
 

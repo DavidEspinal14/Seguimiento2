@@ -9,10 +9,6 @@ public class Bibliotecario extends Empleado implements Inventario {
         super(nombre, edad, cedula, idEmpleado);
         this.horasTrabajo = horasTrabajo;
     }
-    public void gestionarPrestamo(){
-
-    }
-
     /**
      * Metodo para agregar libros
      * @param libro
@@ -60,15 +56,20 @@ public class Bibliotecario extends Empleado implements Inventario {
     }
 
     /**
-     * Metodo para agregar un prestamo a un miembro de la biblioteca
-     * @param miembro
-     * @param prestamo
+     * Metodo para asociar Un prestamo a un miembro
+     * @param ListaMiembros
+     * @param ListaPrestamos
      */
-    public void asociarPrestamoMiembro(Miembro miembro, Prestamo prestamo) {
-        miembro.getPrestamos().add(prestamo);
+    public void asociarPrestamoMiembro(List<Miembro> ListaMiembros, List<Prestamo> ListaPrestamos) {
+        for (Prestamo prestamo : ListaPrestamos) {
+            List<Miembro> miembrosAsociados = (List<Miembro>) prestamo.getListaMiembrosAsociados();
+            for (Miembro miembro : ListaMiembros) {
+                if (!miembrosAsociados.contains(miembro)) {
+                    miembrosAsociados.add(miembro);
+                }
+            }
+        }
     }
-
-
     /**
      * Metodo polimórfico para gestionar libros, dvd´s, revistas
      */
