@@ -62,17 +62,6 @@ public class Bibliotecario extends Empleado implements Inventario {
      * @param ListaPrestamos
      */
 
-    public void asociarPrestamoMiembro(List<Miembro> ListaMiembros, List<Prestamo> ListaPrestamos) {
-        for (Prestamo prestamo : ListaPrestamos) {
-            List<Miembro> miembrosAsociados = (List<Miembro>) prestamo.getListaMiembrosAsociados();
-            for (Miembro miembro : ListaMiembros) {
-                if (!miembrosAsociados.contains(miembro)) {
-                    miembrosAsociados.add(miembro);
-                }
-            }
-        }
-    }
-
 
     /**
      * Metodo polimórfico para gestionar libros, dvd´s, revistas

@@ -255,7 +255,7 @@ public class dashboardController implements Initializable {
         List<Object> parametros = Arrays.asList(bibliotecario1,bibliotecario2,miembro1,miembro2,miembro3,miembro4,miembro5,libro1,libro2,libro3,libro4,libro5,libro6,libro7,libro8,prestamo1,prestamo2,prestamo3,prestamo4);
         parametros.forEach(biblioteca::agregarAutomatico);
         return biblioteca;
-    }
+
     /**
      * Seccion Gets y Sets
      */
